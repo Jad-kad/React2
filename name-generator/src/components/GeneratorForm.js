@@ -2,6 +2,7 @@ import React from 'react'
 import './GeneratorForm.css'
 import store from '../store'
 import TextField from './TextField'
+import RadioButtonList from './RadioButtonList'
 
 export default class GeneratorForm extends React.Component {
 
@@ -29,8 +30,11 @@ export default class GeneratorForm extends React.Component {
 				  label=' What is your favorite planet?'
 				  value={this.state.email}
 				  onChange={this.handleChange.bind(this, 'email')}
+				/>
 
-				/>  
+				<RadioButtonList
+					theme={this.state.theme}
+				 />
 			</div>
 				)
 	}

@@ -9,7 +9,7 @@ class App extends Component {
 
   componentWillMount() {
     this.subscription = store.subscribe(state => {
-      this.setState({counter: state.counter})
+      this.setState(state)
     })
   }
 

@@ -1,6 +1,7 @@
 export default {
 	form:{
 		name:'',
-		email:''
+		email:'',
+		theme: 'Hipster'
 	}
 }
