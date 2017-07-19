@@ -4,10 +4,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #efefef; }
+  background: #efefef;
+}
+
+.App-inner{
+  background: #AFFFBF;
+  margin: 15% ;
+  padding-bottom: 100px;
+  border-radius: 3%;
+}
 
 .App-state {
   font: 14px monospace;
   white-space: pre-wrap;
   background: white;
-  padding: 24px; }
+  padding: 24px; 
+}
+
+.App-GenerateButton {
+  margin-top: 12px;
+  font-size: 24px; 
+}
+
+.GeneratorForm {
+  padding-top: 12px;
+  font-size: 24px;   
+}
