@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Header from './Header'
-import GeneratorForm from './GeneratorForm'
-import Button from './Button'
 import store from '../store';
 import './App.css';
- 
+import FormScreen from '../screens/FormScreen'
+import ResultScreen from '../screens/ResultScreen'
+
 class App extends Component {
 
   componentWillMount() {
@@ -18,26 +18,26 @@ class App extends Component {
   }
 
   render() {
+
+    let screen;
+    switch (this.state.pageName) {
+      case 'result-screen':
+        screen = (<ResultScreen/>)
+        break;
+      default:
+        screen = (<FormScreen/>)
+    }
     return (
       <div className="App">
         <div className="App-inner">
         <Header />
-
-        <div className='GeneratorForm'>
-          <GeneratorForm/>
-        </div>
-
-        <div className='App-GenerateButton'>
-          <Button label="Generate" onClick={this.onGenerateClick.bind(this)}/>
-        </div>
+        {screen}
         </div>
       </div>
     )
   }
 
-  onGenerateClick(){
-    alert('Generate')
-  }
+
 }
 
 export default App;

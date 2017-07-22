@@ -6,7 +6,8 @@ export default class RadioButton extends React.Component {
 	static propTypes = {
 		label:PropTypes.string.isRequired,
 		value: PropTypes.string.isRequired,
-		checked: PropTypes.bool.isRequired
+		checked: PropTypes.bool.isRequired,
+		onChange: PropTypes.func.isRequired
 	}
 
 	static defaultProps = {
@@ -31,7 +32,8 @@ export default class RadioButton extends React.Component {
 				)
 	}
 
-	handleRadioButton(){
-
+	handleRadioButton(event){
+		const value = event.target.value
+		this.props.onChange(value)
 	}
 }

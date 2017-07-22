@@ -27,13 +27,14 @@ export default class GeneratorForm extends React.Component {
 
 				/>
 				<TextField 
-				  label=' What is your favorite planet?'
+				  label=' What is your favorite number?'
 				  value={this.state.email}
 				  onChange={this.handleChange.bind(this, 'email')}
 				/>
 
 				<RadioButtonList
 					theme={this.state.theme}
+					handleRadioChange= {this.handleRadioChange.bind(this)}
 				 />
 			</div>
 				)
@@ -42,6 +43,12 @@ export default class GeneratorForm extends React.Component {
 	  const form = {...this.state}
 	  form[input] = value
 	  store.setState({form})
+	}
+
+	handleRadioChange(value) {
+		const form = {...this.state}
+		form['theme'] = value
+		store.setState({form})
 	}
 
 }
