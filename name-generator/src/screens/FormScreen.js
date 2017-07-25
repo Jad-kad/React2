@@ -2,7 +2,8 @@ import React from 'react'
 import './FormScreen.css'
 import GeneratorForm from '../components/GeneratorForm'
 import Button from '../components/Button'
-import * as actions from '../actions/generateName'
+import * as actions from '../generateName'
+import GenerateNameAction from '../actions/generateName'
 import store from '../store';
 
 
@@ -35,7 +36,7 @@ render() {
 	}
 
 onGenerateClick(){
-	actions.generateName(this.state)
+	GenerateNameAction(this.state)
     actions.changePage('result-screen')
   }
 }

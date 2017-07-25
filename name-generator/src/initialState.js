@@ -6,9 +6,8 @@ export default {
 	},
 
 	result: {
-		companyName: ''
+		companyName: null
 	},
-	generatting: false,
-	compayName: '',
+	loading: false,
 	pageName: 'form-screen'
 }

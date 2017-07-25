@@ -4,6 +4,8 @@ import store from '../store';
 import './App.css';
 import FormScreen from '../screens/FormScreen'
 import ResultScreen from '../screens/ResultScreen'
+import LoadingScreen from '../screens/LoadingScreen'
+
 
 class App extends Component {
 
@@ -20,13 +22,18 @@ class App extends Component {
   render() {
 
     let screen;
-    switch (this.state.pageName) {
-      case 'result-screen':
-        screen = (<ResultScreen/>)
-        break;
-      default:
-        screen = (<FormScreen/>)
+
+    if (this.state.loading === true) {
+      screen = (<LoadingScreen/>)
+    } 
+    else if (this.state.result.companyName != null) {
+      screen = (<ResultScreen/>)
+    } 
+    else if (this.state.pageName === 'form-screen') {
+      screen = (<FormScreen/>)
     }
+
+
     return (
       <div className="App">
         <div className="App-inner">
@@ -37,7 +44,7 @@ class App extends Component {
     )
   }
 
-
 }
+
 
 export default App;
